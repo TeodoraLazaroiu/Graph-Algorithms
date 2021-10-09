@@ -6,9 +6,10 @@ Check if it's possible to create a graph with a given list of degrees
 
 We are given the following list of degrees: 3, 4, 2, 1, 3, 4, 2, 1
 
-```
+```python
 havel_hakimi([3, 4, 2, 1, 3, 4, 2, 1])
-
+```
+```
 3, 4, 2, 1, 3, 4, 2, 1 ----> sorting ----> 4, 4, 3, 3, 2, 2, 1, 1
 4, 4, 3, 3, 2, 2, 1, 1 ---> algorithm ---> 3, 2, 2, 1, 2, 2, 1
 
