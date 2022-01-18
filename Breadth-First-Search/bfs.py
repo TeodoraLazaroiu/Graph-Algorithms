@@ -1,8 +1,32 @@
 # algoritmul de parcurgere in latime a unui graf
 
-import listaAdiacenta
+def listaAdiacenta(fisier, orientare):
+    
+    f = open(fisier)
 
-lista = listaAdiacenta.listaAdiacenta ("bfs.in","neorientat")
+    n = int(f.readline().split()[0])
+    lista = [[] for _ in range(n)]
+
+    if orientare == "neorientat" or orientare == "orientat":
+        for linie in f:
+            i, j = [int(x) for x in linie.split()]
+
+            if j not in lista[i -1]:
+                lista[i - 1].append(j)
+
+            if orientare == "neorientat" and i not in lista[j - 1]:
+                lista[j - 1].append(i)
+    else:
+        exit("Orientarea grafului este gresita")
+
+    for i in range(n):
+        lista[i].sort()
+
+    f.close()
+
+    return lista
+
+lista = listaAdiacenta ("bfs.in", "neorientat")
 
 # functia primeste o lista de adiacenta
 # si nodul de start al parcurgerii
