@@ -1,5 +1,4 @@
 # Graph Algorithms
-<<<<<<< HEAD
 
 ## Implementari
 
@@ -51,9 +50,3 @@ Python implementations of basic graph algorithms:
 - [ ] Laboratorul 4
 - [ ] Laboratorul 5
 - [ ] Laboratorul 6
-=======
- 
-
-Python3 implementations of basic graph algorithms
- - [Havel-Hakimi Algorithm](https://github.com/TeodoraLazaroiu/Graph-Algorithms/tree/main/Havel-Hakimi)
->>>>>>> 6c9c2db17fb8828c92bed0b61420050e13d0a653
