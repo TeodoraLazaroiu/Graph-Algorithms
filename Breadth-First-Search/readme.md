@@ -37,4 +37,5 @@ The nodes after traversing the graph in BFS order:
 
 ## Visual Representation
 
-![Alt Text](https://miro.medium.com/max/875/1*fYKrGW0IUeoS_8XtCoNaLw.gif)
+![Alt Text]()
+<img src="https://miro.medium.com/max/875/1*fYKrGW0IUeoS_8XtCoNaLw.gif" alt="bfs" width="200"/>
