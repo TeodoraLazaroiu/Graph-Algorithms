@@ -13,8 +13,8 @@ Algorithm for traversing a connected graph using the breadth first search method
 
 Input file > bfs.in
 ```
-8 7
-1 2
+8 7 # number of vertices and edges
+1 2 # nodes that are connected
 1 3
 1 4
 1 5
