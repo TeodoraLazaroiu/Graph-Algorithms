@@ -1,1 +1,2 @@
-Py# Algoritmi Fundamentali
+# Algoritmi Fundamentali
+## Profesor: Marinescu Ruxandra
