@@ -1,4 +1,5 @@
-# algoritmul de parcurgere in latime a unui graf
+# parcurgerea in latime a unui graf conex
+# complexitate: O(n + m)
 
 def listaAdiacenta(fisier, orientare):
     

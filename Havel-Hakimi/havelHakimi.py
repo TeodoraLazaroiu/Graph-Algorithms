@@ -1,7 +1,13 @@
+# algorithm that checks if it's possible to
+# create a graph with a given list of degrees
+
+# time complexity: O(n^2 * log n)
+
 def havel_hakimi(degrees):
+
     # the nodes of the graph will be numbered from 1 to n
     # where n is the number of vertices
-    nodes = list(range(1,len(degrees) + 1))
+    nodes = list(range(1, len(degrees) + 1))
 
     # finding the sum of the degrees
     sum = 0
@@ -26,7 +32,7 @@ def havel_hakimi(degrees):
         # we sort the nodes based on the sorting of the degrees
         nodes = [x for _, x in sorted(zip(degrees, nodes), reverse=True)]
         # then we sort the list in descending order
-        degrees.sort(reverse=True)
+        degrees.sort(reverse = True)
 
         # we start the construction of the graph from the node with the highest degree
         # and its neighbours will be the next nodes in descending order of degrees
@@ -64,3 +70,4 @@ degrees = [int(x) for x in input("Degree sequence: ").split()]
 havel_hakimi(degrees)
 
 # the function will return a list of the edges if the graph is constructable
+# otherwise it will print an error message
