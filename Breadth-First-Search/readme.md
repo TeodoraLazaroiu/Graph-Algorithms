@@ -35,4 +35,6 @@ The nodes after traversing the graph in BFS order:
 1, 2, 3, 4, 5, 6, 7, 8
 ```
 
+## Visual Representation
+
 ![Alt Text](https://miro.medium.com/max/875/1*fYKrGW0IUeoS_8XtCoNaLw.gif)

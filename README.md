@@ -2,7 +2,7 @@
 Profesor: Marinescu Ghemeci Ruxandra
 
 1. Parcurgeri
-- [ ] Breadth First Search
+- [x] Breadth First Search
 - [ ] Depth First Search
 - [x] Havel Hakimi
 - [ ] Kosaraju Algorithm
