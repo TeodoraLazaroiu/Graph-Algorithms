@@ -1,4 +1,4 @@
-## Havel-Hakimi Algorithm ##
+## Havel-Hakimi Algorithm
 
 Check if it's possible to create a graph with a given list of degrees
 

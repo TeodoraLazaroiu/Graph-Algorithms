@@ -1,66 +1,77 @@
-# parcurgerea in latime a unui graf conex
-# complexitate: O(n + m)
+# algorithm for traversing a connected graph
+# using the breadth first search method
 
-def listaAdiacenta(fisier, orientare):
+# time complexity: O(n + m)
+
+def adjacencyList(file, orientation):
     
-    f = open(fisier)
+    f = open(file)
 
     n = int(f.readline().split()[0])
-    lista = [[] for _ in range(n)]
+    list = [[] for _ in range(n)]
 
-    if orientare == "neorientat" or orientare == "orientat":
+    if orientation == "undirected" or orientation == "directed":
         for linie in f:
             i, j = [int(x) for x in linie.split()]
 
-            if j not in lista[i -1]:
-                lista[i - 1].append(j)
+            if j not in list[i -1]:
+                list[i - 1].append(j)
 
-            if orientare == "neorientat" and i not in lista[j - 1]:
-                lista[j - 1].append(i)
+            if orientation == "undirected" and i not in list[j - 1]:
+                list[j - 1].append(i)
     else:
-        exit("Orientarea grafului este gresita")
+        exit("Graph orientation is wrong")
 
     for i in range(n):
-        lista[i].sort()
+        list[i].sort()
 
     f.close()
 
-    return lista
+    return list
 
-lista = listaAdiacenta ("bfs.in", "neorientat")
+def bfs(list, node):
 
-# functia primeste o lista de adiacenta
-# si nodul de start al parcurgerii
+    # list with the final result
+    nodes = []
+    visited.append(node)
+    queue.append(node)
 
-def bfs(lista, nod):
+    # we add a nodes into the queue while traversing them
+    # and we pop it out when have visited all of its neighbours
+    while queue:
 
-    vizitat.append(nod)
-    coada.append(nod)
+        s = queue.pop(0)
+        nodes.append(s)
+        # when we add a node to the final list
+        # we also take it out of the queue
 
-    # in coada vor fi introduse nodurile pe masura ce sunt parcurse si vor
-    # fi eliminate cand sunt parcursi toti vecinii nodului respectiv
-    while coada:
-        s = coada.pop(0)
-        g.write(f"{s} ")
-        # cand un nod este eliminat din coada este si afisat
+        # we visit all the neighbours of the current
+        # node and we mark them as visited
+        for neighbour in list[s - 1]:
+            if neighbour not in visited:
+                visited.append(neighbour)
+                queue.append(neighbour)
 
-        # parcurge toti vecinii nodului curent
-        # si ii marcheaza in vectorul de vizitati
-        for vecin in lista[s - 1]:
-            if vecin not in vizitat:
-                vizitat.append(vecin)
-                coada.append(vecin)
+    return nodes
+
+# transforms the input file into an adjacency list of nodes
+list = adjacencyList ("bfs.in", "undirected")
 
 f = open("bfs.in", "r")
-g = open("bfs.out", "w")
 
-coada = []
-vizitat = []
+queue = []
+visited = []
 
-# numarul de noduri, muchii si nodul de start
-n, m, x = [int(x) for x in f.readline().split()]
+# number of vertices and edges
+n, m = [int(x) for x in f.readline().split()]
 
-bfs(lista, x)
+# start node
+s = 1
+
+nodes = bfs(list, s)
+
+# nodes after traversing the graph with bfs
+for i in nodes:
+    print(i, end = ", ")
 
 f.close()
-g.close()
